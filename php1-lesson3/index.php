@@ -101,18 +101,93 @@ $letterArr = [
 'ч' => 'ch',
 'ш' => 'sh',
 'щ' => 'sh',
-'ь' => '',
+'ь' => "'",
 'ы' => 'y',
-'ъ' => '',
+'ъ' => "'",
 'э' => 'e',
 'ю' => 'yu',
 'я' => 'ya',
 ];
 
-$myWord = "Слово";
+$myWord = "Коллаборция";
 
-$wordArr = str_split($myWord);
+echo $myWord."<br>";
 
-var_dump ($wordArr);
+function translit($letterArr, $myWord){
+
+$wordArr = mb_str_split($myWord);
+
+
+
+for ($i = 0; $i < count($wordArr); $i++) {
+    //echo $wordArr[$i] . "- $i";
+    foreach($letterArr as $rusLetter => $engLetter){
+
+            if($wordArr[$i] == $rusLetter) {
+                //echo $wordArr[$i];
+                $wordArr[$i] = $engLetter;
+
+            }
+
+    }
+
+}
+
+$transliteratedWord = implode('', $wordArr);
+
+return $transliteratedWord;
+}
+
+
+echo translit($letterArr, $myWord);
+
+
+
+echo "<h2>Задание 5</h2>";
+
+$myString = "Съешь же ещё этих мягких французских булок, да выпей чаю";
+
+echo $myString."<br>";
+
+function spaceReplace($myString){
+
+$stringArr = mb_str_split($myString);
+
+//var_dump ($stringArr);
+
+for ($i = 0; $i < count($stringArr); $i++){
+
+    if($stringArr[$i] == " ") {
+
+        $stringArr[$i] = "_";
+
+    }
+
+}
+
+return $spaceReplacedString = implode('', $stringArr);
+
+}
+
+echo spaceReplace($myString);
+
+
+
+echo "<h2>Задание 6</h2>";
+
+$li = ['<li>Пункт1</li>',
+'<li>Пункт2</li>',
+'<li>Пункт3</li>',
+'<li>Пункт4</li>',
+'<li>Пункт5</li>',];
+
+echo "<ul>";
+
+for($i = 0; $i < count($li); $i++) {
+
+    echo $li[$i];
+
+};
+echo "</ul>";
 
 ?>
