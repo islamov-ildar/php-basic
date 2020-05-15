@@ -6,3 +6,4 @@ define("UPLOADS_DIR", DOCUMENT_ROOT . "uploads/");
 define("IMAGES_DIR", DOCUMENT_ROOT . "public/images/");
 define("IMAGES_DIR_SMALL", DOCUMENT_ROOT . "public/images/small/");
 define("VENDOR_DIR", DOCUMENT_ROOT . "vendor/");
+define("CONFIG_DIR", DOCUMENT_ROOT . "config/");
