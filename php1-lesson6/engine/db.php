@@ -8,7 +8,7 @@ function getConnection() {
             $dbConfig['login'],
             $dbConfig['password'],
             $dbConfig['db_name'],
-            $dbConfig['port'],
+            $dbConfig['port']
         );
     }
     return $connToProductsDataBase;
